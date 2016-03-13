@@ -358,7 +358,6 @@
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在命令行显示录制信息<br><code>--verbose</code><br>将视频方向旋转90°<br><code>--rotate</code><br>帮助<br><code>--help</code></p>
 <hr>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看已连接设备"><a href="#查看已连接设备" class="headerlink" title="查看已连接设备"></a>查看已连接设备</h3><p>查看已连接的设备，包括 USB 连接与 TCP/IP 5555 端口连接的设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices</span><br><span class="line">List of devices attached </span><br><span class="line">[serialNumber1] [state]</span><br><span class="line">[serialNumber2] [state]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<blockquote>
 <ul>
 <li><code>Serial number</code><ul>
 <li>真实设备显示为控制台序号</li>
@@ -369,12 +368,11 @@
 <li><code>state</code><ul>
 <li><code>offline</code> - 已连接但设备无响应。</li>
 <li><code>device</code> - 已连接至adb服务。adb服务在设备开机时即开始加载，故设备可能处于开机状态。</li>
-<li><code>no device</code> - 没有设备或模拟器连接。</li>
+<li><code>no device</code> - 没有设备或模拟器连接。<br>添加 <code>-l</code> 可查看设备限定词<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices -l  </span><br><span class="line">[serialNumber] [state] product:[...] model:[...] device:[...]</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-</blockquote>
-<p>添加 <code>-l</code> 可查看设备限定词<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices -l  </span><br><span class="line">[serialNumber] [state] product:[...] model:[...] device:[...]</span><br></pre></td></tr></table></figure></p>
 <h3 id="远程shell"><a href="#远程shell" class="headerlink" title="远程shell"></a>远程shell</h3><p>运行手机内的 <code>/system/bin/...</code> 的命令  </p>
 <ul>
 <li><p>进入连接设备的shell命令行</p>

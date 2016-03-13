@@ -1544,11 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-<<<<<<< HEAD
-  background: #ffc721;
-=======
-  background: #1aff8b;
->>>>>>> 941658bb60d3dd4a68561d11ecf75cb553a75679
+  background: #dd11b6;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2395,4 +2391,14 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.theme-info {
+  margin-right: 10px;
+}
+.theme-info::after {
+  content: "|";
+  padding-left: 10px;
+}
+.browse-times {
+  display: inline-block;
 }

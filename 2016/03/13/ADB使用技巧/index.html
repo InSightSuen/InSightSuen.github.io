@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="InSight Suen, Blog, InSight Suen's Blog, 孙健, 博客, 孙健的博客, Java, Android" />
+  <meta name="keywords" content="ADB,Android," />
 
 
 
@@ -57,15 +57,30 @@
 
 
 
-<meta name="description" content="InSight Suen | Blog | InSight Suen&apos;s Blog | 孙健 | 博客 | 孙健的博客 | java | android">
-<meta property="og:type" content="website">
-<meta property="og:title" content="孙健的博客">
-<meta property="og:url" content="http://www.insightsuen.com/index.html">
+<meta name="description" content="ADBADB，即 Android Debug Bridge，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。
+ADB 是一个客户端-服务端程序，包含以下三部分功能：
+
+一个客户端，运行在开发 PC 上。可以通过 ADB 命令行来调用客户端。其他的 Android 工具，例如 ADT 和 DDMS 都是由 ADB 创建的。
+一个服务端，以后台进程运行在开发 PC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ADB使用技巧">
+<meta property="og:url" content="http://www.insightsuen.com/2016/03/13/ADB使用技巧/index.html">
 <meta property="og:site_name" content="孙健的博客">
-<meta property="og:description" content="InSight Suen | Blog | InSight Suen&apos;s Blog | 孙健 | 博客 | 孙健的博客 | java | android">
+<meta property="og:description" content="ADBADB，即 Android Debug Bridge，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。
+ADB 是一个客户端-服务端程序，包含以下三部分功能：
+
+一个客户端，运行在开发 PC 上。可以通过 ADB 命令行来调用客户端。其他的 Android 工具，例如 ADT 和 DDMS 都是由 ADB 创建的。
+一个服务端，以后台进程运行在开发 PC">
+<meta property="og:image" content="http://www.insightsuen.com/2016/03/13/ADB使用技巧/PermitDebug.png">
+<meta property="og:updated_time" content="2016-03-13T05:00:36.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="孙健的博客">
-<meta name="twitter:description" content="InSight Suen | Blog | InSight Suen&apos;s Blog | 孙健 | 博客 | 孙健的博客 | java | android">
+<meta name="twitter:title" content="ADB使用技巧">
+<meta name="twitter:description" content="ADBADB，即 Android Debug Bridge，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。
+ADB 是一个客户端-服务端程序，包含以下三部分功能：
+
+一个客户端，运行在开发 PC 上。可以通过 ADB 命令行来调用客户端。其他的 Android 工具，例如 ADT 和 DDMS 都是由 ADB 创建的。
+一个服务端，以后台进程运行在开发 PC">
+<meta name="twitter:image" content="http://www.insightsuen.com/2016/03/13/ADB使用技巧/PermitDebug.png">
 
 
 
@@ -83,7 +98,7 @@
   };
 </script>
 
-  <title> 孙健的博客 </title>
+  <title> ADB使用技巧 | 孙健的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -123,9 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +247,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/13/ADB使用技巧/" itemprop="url">
-                  ADB使用技巧
-                </a>
+                ADB使用技巧
               
             
           </h1>
@@ -302,9 +312,7 @@
       
 
       
-        
-          
-            <h1 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h1><p><code>ADB</code>，即 <code>Android Debug Bridge</code>，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。</p>
+        <h1 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h1><p><code>ADB</code>，即 <code>Android Debug Bridge</code>，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。</p>
 <p>ADB 是一个客户端-服务端程序，包含以下三部分功能：</p>
 <ul>
 <li>一个客户端，运行在开发 PC 上。可以通过 ADB 命令行来调用客户端。其他的 Android 工具，例如 <code>ADT</code> 和 <code>DDMS</code> 都是由 ADB 创建的。</li>
@@ -388,190 +396,53 @@
 <p>  <code>-d</code> - 选择通过USB连接的设备，当有多个设备通过USB连接时返回错误。<br>  <code>-e</code> - 选择模拟器，当有多个模拟器时返回错误。<br>  <code>-s &lt;specific device&gt;</code> - 根据设备序列号或者限定词选择设备。</p>
 <h3 id="安装APK"><a href="#安装APK" class="headerlink" title="安装APK"></a>安装APK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install [-lrtsdg] &lt;file&gt;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/11/Java核心技术笔记-基础知识-01/" itemprop="url">
-                  Java核心技术-基础知识 学习笔记01
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-11T17:23:08+08:00" content="2016-03-11">
-              2016-03-11
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LearningNote/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LearningNote/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/ADB/" rel="tag">#ADB</a>
           
-
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/11/Java核心技术笔记-基础知识-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/Java核心技术笔记-基础知识-01/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>开发 <code>Android</code> 近一年，但始终没有静下心来好好巩固下 <code>Java</code> 的基础。<br>目前看的<a href="https://book.douban.com/subject/25762168/" target="_blank" rel="external">《Java核心技术 卷I 基础知识》第九版</a>，可以说是一本经典的 Java 基础书籍，值得推荐。打算把我的学习笔记发到博客，以此来激励自己(。・＿・。)ﾉ</p>
-<h1 id="Java概述"><a href="#Java概述" class="headerlink" title="Java概述"></a>Java概述</h1><p>Java 不只是一种语言，是一个完整的平台，有一个庞大的库，提供了注入安全性、可移植性强以及自动垃圾收集等执行环境。</p>
-<h2 id="Java”白皮书”中的关键术语"><a href="#Java”白皮书”中的关键术语" class="headerlink" title="Java”白皮书”中的关键术语"></a>Java”白皮书”中的关键术语</h2><h3 id="简单性"><a href="#简单性" class="headerlink" title="简单性"></a>简单性</h3><blockquote>
-<p> Java 语法是 <code>C++</code> 语法的一个“<strong>纯净</strong>”版本。</p>
-</blockquote>
-<p>说到 Java，无疑会和 C++ 对比。Java 剔除了 C++ 中很少使用的、又难以理解的特性：头文件、指针运算、结构、联合、操作符重载、虚基类等。<br>另外，Java 运行的环境所需很小，基本解释器大约仅为 40KB；加上标准类库和对线程的支持大约增加至 175KB。现在Java对嵌入式设备提供了 <code>Java Micro Edition</code> 微型版运行环境。</p>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p>OOP 已经证明了是现代编程的主流方向，Java 提供了类、接口等面向对象技术。</p>
-<h3 id="网络技能"><a href="#网络技能" class="headerlink" title="网络技能"></a>网络技能</h3><p>Javat 提供了用于 <code>HTTP</code> 和 <code>FTP</code> 之类的 <code>TCP/IP</code> 协议的例程库，使用 Java 开发 <code>socket</code> 网络协议变得简单。</p>
-<h3 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h3><p>Java 在设计之初就投入了大量精力考虑程序的可靠性，Java 的指针模型相对 C++ 消除重写内存和损坏数据的可能性。Java 编译器能够检测许多其他语言仅在运行时刻才能检测出来的问题。</p>
-<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>在 Java 发展中也不断地添加更多安全特性，Java 最初便了防范各种共计：</p>
-<blockquote>
-<ul>
-<li>运行时对栈溢出。</li>
-<li>在自己的处理空间之外破坏内存。</li>
-<li>未经授权读取文件。</li>
-</ul>
-</blockquote>
-<h3 id="体系结构中立"><a href="#体系结构中立" class="headerlink" title="体系结构中立"></a>体系结构中立</h3><blockquote>
-<p>Java 编译器通过生成与特性计算机体系结构无关的字节码指令来实现这一特性。</p>
-</blockquote>
-<p>虽然解释字节码比全速运行机器码指令慢很多，但 Java 将使用最频繁的字节码序列翻译成机器码，这一过程被称为<code>即时编译</code>。这一策略已经被证明十分有效，<code>.NET</code> 也采用了这种策略。</p>
-<h3 id="可移植性"><a href="#可移植性" class="headerlink" title="可移植性"></a>可移植性</h3><blockquote>
-<p>Java 规范中没用“依赖具体实现”的地方。基本数据类型的大小以及有关算法都做出了明确的说明。</p>
-</blockquote>
-<p>例如：Java 中 <code>int</code> 永远为 32 位整数，不会因为操作系统或编译器的不同产生变化。Java 中数据类型具有固定的大小，二进制数据以固定的格式进行存储和传输。字符串使用标准的Unicode格式存储的。</p>
-<h3 id="解释型"><a href="#解释型" class="headerlink" title="解释型"></a>解释型</h3><p>Java 解释器可以在任何环境中在中执行 Java 字节码。现在即时编译器将字节码翻译成该环境下的机器码。</p>
-<h3 id="高性能"><a href="#高性能" class="headerlink" title="高性能"></a>高性能</h3><p>在一些场合下，为了更高性能，在运行中字节码可以快速地翻译成该环境下的 CPU 机器码。这使得即时编译器成为了传统编译器的竞争对手，有些情况下甚至能优于传统编译器。</p>
-<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p>Java 把多线程的实现交给了底层的操作系统或者线程库来完成。Java 在多线程开发上的便捷性是值的肯定的。正因为如此， Java 成为了诸多服务器的开发语言。</p>
-<h3 id="动态性"><a href="#动态性" class="headerlink" title="动态性"></a>动态性</h3><blockquote>
-<p>Java 库可以自由地添加新方法和实例变量，而对客户端却没有影响。</p>
-</blockquote>
-<p>Java 当前版本允许程序员了解队形的结构和行为，这对于必须在运行时分析对象的系统来说至关重要。</p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/11/Java核心技术笔记-基础知识-01/" rel="next" title="Java核心技术-基础知识 学习笔记01">
+                <i class="fa fa-chevron-left"></i> Java核心技术-基础知识 学习笔记01
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -579,6 +450,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/13/ADB使用技巧/"
+           data-title="ADB使用技巧" data-url="http://www.insightsuen.com/2016/03/13/ADB使用技巧/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -598,8 +477,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/6986412?v=3&s=460"
@@ -650,6 +538,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ADB"><span class="nav-number">1.</span> <span class="nav-text">ADB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用-ADB"><span class="nav-number">1.1.</span> <span class="nav-text">如何使用 ADB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无线连接"><span class="nav-number">1.2.</span> <span class="nav-text">无线连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#录制视频"><span class="nav-number">1.3.</span> <span class="nav-text">录制视频</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.3.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改时长"><span class="nav-number">1.3.2.</span> <span class="nav-text">修改时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整视频分辨率"><span class="nav-number">1.3.3.</span> <span class="nav-text">调整视频分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调节比特率"><span class="nav-number">1.3.4.</span> <span class="nav-text">调节比特率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.5.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.4.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看已连接设备"><span class="nav-number">1.4.1.</span> <span class="nav-text">查看已连接设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程shell"><span class="nav-number">1.4.2.</span> <span class="nav-text">远程shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择设备"><span class="nav-number">1.4.3.</span> <span class="nav-text">选择设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装APK"><span class="nav-number">1.4.4.</span> <span class="nav-text">安装APK</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -734,6 +639,167 @@
   
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 

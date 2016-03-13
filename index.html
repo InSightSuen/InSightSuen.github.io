@@ -303,90 +303,18 @@
 
       
         
-          
-            <h1 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h1><p><code>ADB</code>，即 <code>Android Debug Bridge</code>，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。</p>
+          <h1 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h1><p><code>ADB</code>，即 <code>Android Debug Bridge</code>，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。</p>
 <p>ADB 是一个客户端-服务端程序，包含以下三部分功能：</p>
 <ul>
 <li>一个客户端，运行在开发 PC 上。可以通过 ADB 命令行来调用客户端。其他的 Android 工具，例如 <code>ADT</code> 和 <code>DDMS</code> 都是由 ADB 创建的。</li>
 <li>一个服务端，以后台进程运行在开发 PC 上。服务端用于客户端与模拟器或者 Android 设备上的守护进程的通讯。</li>
 <li>一个守护进程，以后台进程运行在模拟器或者 Android 设备上。</li>
 </ul>
-<h2 id="如何使用-ADB"><a href="#如何使用-ADB" class="headerlink" title="如何使用 ADB"></a>如何使用 ADB</h2><ol>
-<li>配置 ADB 环境变量<ul>
-<li>Windows<br>将 <code>&lt;Android SDK&gt;/platform-tools/</code> 添加在系统环境到 <code>path</code></li>
-<li>Mac<br>在配置文件中写入 <code>export PATH=${PATH}:&lt;Android SDK&gt;/platform-tools/</code></li>
-</ul>
-</li>
-<li>打开手机中的 <code>USB调试</code> 功能。 </li>
-<li>将手机通过 USB 连接至 PC（可能需要安装驱动），在手机上同意授权。<img src="/2016/03/13/ADB使用技巧/PermitDebug.png" alt="允许调试" title="允许调试">
-</li>
-</ol>
-<h2 id="无线连接"><a href="#无线连接" class="headerlink" title="无线连接"></a>无线连接</h2><p>ADB还可以通过无线连接，仅需要简单配置即可实现在 Wi-Fi 下使用 ADB</p>
-<ol>
-<li><p>将 PC 与手机连接至同一 Wi-Fi 下。</p>
-</li>
-<li><p>通过 USB 连接手机。</p>
-</li>
-<li><p>设置手机监听 <code>TCP/IP 5555</code> 端口 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb tcpip 5555</span><br></pre></td></tr></table></figure>
-<p>若PC连接多个手机，需要指定设备  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices </span><br><span class="line">List of devices attached  </span><br><span class="line">[serialNumber1] device  </span><br><span class="line">[serialNumber2] device  </span><br><span class="line"></span><br><span class="line">$ adb tcpip 5555 -s &lt;serialNumber1&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查询手机的内网 ip 地址。</p>
-</li>
-<li><p>连接手机  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb connect &lt;device-ip-address&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>确定是否已连接  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices </span><br><span class="line">List of devices attached </span><br><span class="line">&lt;device-ip-address&gt;:5555 device</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="录制视频"><a href="#录制视频" class="headerlink" title="录制视频"></a>录制视频</h2><p>在 Android 4.4（API 19）之后的设备上，可以通过 <code>screenrecord</code> 命令方便地录制视频。录制的视频格式为 <code>MPEG-4</code> 。</p>
-<blockquote>
-<p>注意：录制的视频只有画面，没有声音。  </p>
-<p>部分设备不支持原生屏幕分辨率，尝试低分辨录制<br>录制过程中不支持屏幕旋转，若发生旋转，则部分画面会被裁剪。</p>
-</blockquote>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screenrecord [options] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4</span><br></pre></td></tr></table></figure></p>
-<p>视频默认时长 180 秒，按 Ctrl-C 可提前中断录制。<br>使用 <code>adb pull</code> 命令复制录制的视频文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb pull /sdcard/demo.mp4</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>默认视频分辨率为手机的原始分辨率<br>默认比特率为 4 Mbps</p>
-</blockquote>
-<h3 id="修改时长"><a href="#修改时长" class="headerlink" title="修改时长"></a>修改时长</h3><p>添加 <code>--time-limit &lt;TIME&gt;</code><br>例如调整为 60 秒：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4 --time-limit 60</span><br></pre></td></tr></table></figure></p>
-<h3 id="调整视频分辨率"><a href="#调整视频分辨率" class="headerlink" title="调整视频分辨率"></a>调整视频分辨率</h3><p>添加 <code>--size &lt;WIDTHxHEIGHT&gt;</code><br>例如调整为 1280 x 720 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4 --size 1280x720</span><br></pre></td></tr></table></figure></p>
-<h3 id="调节比特率"><a href="#调节比特率" class="headerlink" title="调节比特率"></a>调节比特率</h3><p>添加 <code>--bit-rate &lt;RATE&gt;</code><br>例如调整比特率为 2 Mbps：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4 --bit-rate 2000000</span><br></pre></td></tr></table></figure></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在命令行显示录制信息<br><code>--verbose</code><br>将视频方向旋转90°<br><code>--rotate</code><br>帮助<br><code>--help</code></p>
-<hr>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看已连接设备"><a href="#查看已连接设备" class="headerlink" title="查看已连接设备"></a>查看已连接设备</h3><p>查看已连接的设备，包括 USB 连接与 TCP/IP 5555 端口连接的设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices</span><br><span class="line">List of devices attached </span><br><span class="line">[serialNumber1] [state]</span><br><span class="line">[serialNumber2] [state]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><code>Serial number</code><ul>
-<li>真实设备显示为控制台序号</li>
-<li>通过 TCP/IP 5555 端口连接的会显示 <code>192.168.xxx.xxx:5555</code></li>
-<li>模拟器会显示为 <code>emulator-xxxx</code></li>
-</ul>
-</li>
-<li><code>state</code><ul>
-<li><code>offline</code> - 已连接但设备无响应。</li>
-<li><code>device</code> - 已连接至adb服务。adb服务在设备开机时即开始加载，故设备可能处于开机状态。</li>
-<li><code>no device</code> - 没有设备或模拟器连接。<br>添加 <code>-l</code> 可查看设备限定词<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices -l  </span><br><span class="line">[serialNumber] [state] product:[...] model:[...] device:[...]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="远程shell"><a href="#远程shell" class="headerlink" title="远程shell"></a>远程shell</h3><p>运行手机内的 <code>/system/bin/...</code> 的命令  </p>
-<ul>
-<li><p>进入连接设备的shell命令行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell  </span><br><span class="line">shell@ $</span><br></pre></td></tr></table></figure>
-<p>输入 <code>exit</code> 退出远程shell或者按 <code>CTRL+D</code> 。</p>
-</li>
-<li>单次使用远程shell命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell [command]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="选择设备"><a href="#选择设备" class="headerlink" title="选择设备"></a>选择设备</h3><p>当只连接单个设备或者模拟器时，adb shell会默认选择已连接的设备。当连接多个设备时，有些命令需要指定选择的设备。可通过 <code>-d|-e|-s &lt;specific device&gt;</code> 选择设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb [-d|-e|-s &lt;specific device&gt;] [command]  </span><br><span class="line">adb [-d|-e|-s &lt;specific device&gt;] shell  </span><br><span class="line">adb [-d|-e|-s &lt;specific device&gt;] shell [command]</span><br></pre></td></tr></table></figure></p>
-<p>  <code>-d</code> - 选择通过USB连接的设备，当有多个设备通过USB连接时返回错误。<br>  <code>-e</code> - 选择模拟器，当有多个模拟器时返回错误。<br>  <code>-s &lt;specific device&gt;</code> - 根据设备序列号或者限定词选择设备。</p>
-<h3 id="安装APK"><a href="#安装APK" class="headerlink" title="安装APK"></a>安装APK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install [-lrtsdg] &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/13/ADB使用技巧/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -510,41 +438,13 @@
 
       
         
-          
-            <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>开发 <code>Android</code> 近一年，但始终没有静下心来好好巩固下 <code>Java</code> 的基础。<br>目前看的<a href="https://book.douban.com/subject/25762168/" target="_blank" rel="external">《Java核心技术 卷I 基础知识》第九版</a>，可以说是一本经典的 Java 基础书籍，值得推荐。打算把我的学习笔记发到博客，以此来激励自己(。・＿・。)ﾉ</p>
+          <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>开发 <code>Android</code> 近一年，但始终没有静下心来好好巩固下 <code>Java</code> 的基础。<br>目前看的<a href="https://book.douban.com/subject/25762168/">《Java核心技术 卷I 基础知识》第九版</a>，可以说是一本经典的 Java 基础书籍，值得推荐。打算把我的学习笔记发到博客，以此来激励自己(。・＿・。)ﾉ</p>
 <h1 id="Java概述"><a href="#Java概述" class="headerlink" title="Java概述"></a>Java概述</h1><p>Java 不只是一种语言，是一个完整的平台，有一个庞大的库，提供了注入安全性、可移植性强以及自动垃圾收集等执行环境。</p>
-<h2 id="Java”白皮书”中的关键术语"><a href="#Java”白皮书”中的关键术语" class="headerlink" title="Java”白皮书”中的关键术语"></a>Java”白皮书”中的关键术语</h2><h3 id="简单性"><a href="#简单性" class="headerlink" title="简单性"></a>简单性</h3><blockquote>
-<p> Java 语法是 <code>C++</code> 语法的一个“<strong>纯净</strong>”版本。</p>
-</blockquote>
-<p>说到 Java，无疑会和 C++ 对比。Java 剔除了 C++ 中很少使用的、又难以理解的特性：头文件、指针运算、结构、联合、操作符重载、虚基类等。<br>另外，Java 运行的环境所需很小，基本解释器大约仅为 40KB；加上标准类库和对线程的支持大约增加至 175KB。现在Java对嵌入式设备提供了 <code>Java Micro Edition</code> 微型版运行环境。</p>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p>OOP 已经证明了是现代编程的主流方向，Java 提供了类、接口等面向对象技术。</p>
-<h3 id="网络技能"><a href="#网络技能" class="headerlink" title="网络技能"></a>网络技能</h3><p>Javat 提供了用于 <code>HTTP</code> 和 <code>FTP</code> 之类的 <code>TCP/IP</code> 协议的例程库，使用 Java 开发 <code>socket</code> 网络协议变得简单。</p>
-<h3 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h3><p>Java 在设计之初就投入了大量精力考虑程序的可靠性，Java 的指针模型相对 C++ 消除重写内存和损坏数据的可能性。Java 编译器能够检测许多其他语言仅在运行时刻才能检测出来的问题。</p>
-<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>在 Java 发展中也不断地添加更多安全特性，Java 最初便了防范各种共计：</p>
-<blockquote>
-<ul>
-<li>运行时对栈溢出。</li>
-<li>在自己的处理空间之外破坏内存。</li>
-<li>未经授权读取文件。</li>
-</ul>
-</blockquote>
-<h3 id="体系结构中立"><a href="#体系结构中立" class="headerlink" title="体系结构中立"></a>体系结构中立</h3><blockquote>
-<p>Java 编译器通过生成与特性计算机体系结构无关的字节码指令来实现这一特性。</p>
-</blockquote>
-<p>虽然解释字节码比全速运行机器码指令慢很多，但 Java 将使用最频繁的字节码序列翻译成机器码，这一过程被称为<code>即时编译</code>。这一策略已经被证明十分有效，<code>.NET</code> 也采用了这种策略。</p>
-<h3 id="可移植性"><a href="#可移植性" class="headerlink" title="可移植性"></a>可移植性</h3><blockquote>
-<p>Java 规范中没用“依赖具体实现”的地方。基本数据类型的大小以及有关算法都做出了明确的说明。</p>
-</blockquote>
-<p>例如：Java 中 <code>int</code> 永远为 32 位整数，不会因为操作系统或编译器的不同产生变化。Java 中数据类型具有固定的大小，二进制数据以固定的格式进行存储和传输。字符串使用标准的Unicode格式存储的。</p>
-<h3 id="解释型"><a href="#解释型" class="headerlink" title="解释型"></a>解释型</h3><p>Java 解释器可以在任何环境中在中执行 Java 字节码。现在即时编译器将字节码翻译成该环境下的机器码。</p>
-<h3 id="高性能"><a href="#高性能" class="headerlink" title="高性能"></a>高性能</h3><p>在一些场合下，为了更高性能，在运行中字节码可以快速地翻译成该环境下的 CPU 机器码。这使得即时编译器成为了传统编译器的竞争对手，有些情况下甚至能优于传统编译器。</p>
-<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p>Java 把多线程的实现交给了底层的操作系统或者线程库来完成。Java 在多线程开发上的便捷性是值的肯定的。正因为如此， Java 成为了诸多服务器的开发语言。</p>
-<h3 id="动态性"><a href="#动态性" class="headerlink" title="动态性"></a>动态性</h3><blockquote>
-<p>Java 库可以自由地添加新方法和实例变量，而对客户端却没有影响。</p>
-</blockquote>
-<p>Java 当前版本允许程序员了解队形的结构和行为，这对于必须在运行时分析对象的系统来说至关重要。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/11/Java核心技术笔记-基础知识-01/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

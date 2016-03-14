@@ -103,7 +103,6 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  }
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +294,7 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/03/13/ADB使用技巧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/ADB使用技巧/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/13/ADB使用技巧/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -469,8 +468,11 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/13/ADB使用技巧/"
-           data-title="ADB使用技巧" data-url="http://www.insightsuen.com/2016/03/13/ADB使用技巧/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -831,28 +833,30 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"insightsuen"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'InSightSuen';
+      var disqus_identifier = '2016/03/13/ADB使用技巧/';
+      var disqus_title = 'ADB使用技巧';
+      var disqus_url = 'http://www.insightsuen.com/2016/03/13/ADB使用技巧/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

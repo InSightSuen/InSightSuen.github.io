@@ -310,11 +310,7 @@
 
       
         
-          
-          解决修改 Style Attributes 不起作用的问题今天新建一个项目时遇到了一个问题，项目中大部分 Activity theme 需要显示 ActionBar，个别页面根据业务不需要显示。需求很简单，直接定义 AppTheme 作为 Application 的基础样式，再定义一个子样式 AppTheme.NoTitle，修改为无 ActionBar 即可，
-问题代码AndroidManife
-          ...
-
+          <h1 id="解决修改-Style-Attributes-不起作用的问题"><a href="#解决修改-Style-Attributes-不起作用的问题" class="headerlink" title="解决修改 Style Attributes 不起作用的问题"></a>解决修改 Style Attributes 不起作用的问题</h1><p>今天新建一个项目时遇到了一个问题，项目中大部分 Activity theme 需要显示 <code>ActionBar</code>，个别页面根据业务不需要显示。<br>需求很简单，直接定义 <code>AppTheme</code> 作为 <code>Application</code> 的基础样式，再定义一个子样式 <code>AppTheme.NoTitle</code>，修改为无 <code>ActionBar</code> 即可，</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/02/08/自定义Style正确引用attributes的方法/#more" rel="contents">
               阅读全文 &raquo;
@@ -434,11 +430,13 @@
 
       
         
-          
-          String Format 使用指南输出 String 是一个我们常用的功能，用过使用 String Format 可以方便地格式化输出数值。Java SE 5.0 起沿用了 C 语言库函数的 printf 方法。 
-API1234567// String类 format 静态方法public static String format(String format, Object... args)p
-          ...
-
+          <h1 id="String-Format-使用指南"><a href="#String-Format-使用指南" class="headerlink" title="String Format 使用指南"></a>String Format 使用指南</h1><p>输出 <code>String</code> 是一个我们常用的功能，用过使用 <code>String Format</code> 可以方便地格式化输出数值。<code>Java SE 5.0</code> 起沿用了 <code>C</code> 语言库函数的 <code>printf</code> 方法。 </p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// String类 format 静态方法</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">format</span><span class="params">(String format, Object... args)</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">format</span><span class="params">(Locale l, String format, Object... args)</span></div><div class="line">  </div><div class="line"><span class="comment">// PrintWriter类 printf 方法</span></div><div class="line"><span class="keyword">public</span> PrintWriter <span class="title">printf</span><span class="params">(String format, Object... args)</span></div><div class="line"><span class="keyword">public</span> PrintWriter <span class="title">printf</span><span class="params">(Locale l, String format, Object... args)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>l - 使用特定的 <code>local</code> 使用 <code>format</code> 规则，可以为 <code>null</code>。</li>
+<li>format - 将要输出的字符串中的数值使用转换符替换。</li>
+<li>args - 使用的数值。</li>
+</ul>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/07/String Format使用指南/#more" rel="contents">
               阅读全文 &raquo;

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ADB,Android," />
+  <meta name="keywords" content="Android,ADB," />
 
 
 
@@ -72,7 +72,7 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
 一个客户端，运行在开发 PC 上。可以通过 ADB 命令行来调用客户端。其他的 Android 工具，例如 ADT 和 DDMS 都是由 ADB 创建的。
 一个服务端，以后台进程运行在开发 PC">
 <meta property="og:image" content="http://www.insightsuen.com/2016/03/13/ADB使用技巧/PermitDebug.png">
-<meta property="og:updated_time" content="2016-03-13T09:19:52.117Z">
+<meta property="og:updated_time" content="2016-03-13T09:19:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ADB使用技巧">
 <meta name="twitter:description" content="ADBADB，即 Android Debug Bridge，是 Android 开发中通过 PC 端控制 Android 设备的重要命令行工具。
@@ -350,17 +350,17 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
 <li><p>通过 USB 连接手机。</p>
 </li>
 <li><p>设置手机监听 <code>TCP/IP 5555</code> 端口 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb tcpip 5555</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb tcpip 5555</div></pre></td></tr></table></figure>
 <p>若PC连接多个手机，需要指定设备  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices </span><br><span class="line">List of devices attached  </span><br><span class="line">[serialNumber1] device  </span><br><span class="line">[serialNumber2] device  </span><br><span class="line"></span><br><span class="line">$ adb tcpip 5555 -s &lt;serialNumber1&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ adb devices </div><div class="line">List of devices attached  </div><div class="line">[serialNumber1] device  </div><div class="line">[serialNumber2] device  </div><div class="line"></div><div class="line">$ adb tcpip 5555 -s &lt;serialNumber1&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>查询手机的内网 ip 地址。</p>
 </li>
 <li><p>连接手机  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb connect &lt;device-ip-address&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb connect &lt;device-ip-address&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>确定是否已连接  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices </span><br><span class="line">List of devices attached </span><br><span class="line">&lt;device-ip-address&gt;:5555 device</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ adb devices </div><div class="line">List of devices attached </div><div class="line">&lt;device-ip-address&gt;:5555 device</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="录制视频"><a href="#录制视频" class="headerlink" title="录制视频"></a>录制视频</h2><p>在 Android 4.4（API 19）之后的设备上，可以通过 <code>screenrecord</code> 命令方便地录制视频。录制的视频格式为 <code>MPEG-4</code> 。</p>
@@ -368,18 +368,18 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
 <p>注意：录制的视频只有画面，没有声音。  </p>
 <p>部分设备不支持原生屏幕分辨率，尝试低分辨录制<br>录制过程中不支持屏幕旋转，若发生旋转，则部分画面会被裁剪。</p>
 </blockquote>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screenrecord [options] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4</span><br></pre></td></tr></table></figure></p>
-<p>视频默认时长 180 秒，按 Ctrl-C 可提前中断录制。<br>使用 <code>adb pull</code> 命令复制录制的视频文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb pull /sdcard/demo.mp4</span><br></pre></td></tr></table></figure></p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">screenrecord [options] &lt;filename&gt;</div></pre></td></tr></table></figure>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb shell screenrecord /sdcard/demo.mp4</div></pre></td></tr></table></figure></p>
+<p>视频默认时长 180 秒，按 Ctrl-C 可提前中断录制。<br>使用 <code>adb pull</code> 命令复制录制的视频文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb pull /sdcard/demo.mp4</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>默认视频分辨率为手机的原始分辨率<br>默认比特率为 4 Mbps</p>
 </blockquote>
-<h3 id="修改时长"><a href="#修改时长" class="headerlink" title="修改时长"></a>修改时长</h3><p>添加 <code>--time-limit &lt;TIME&gt;</code><br>例如调整为 60 秒：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4 --time-limit 60</span><br></pre></td></tr></table></figure></p>
-<h3 id="调整视频分辨率"><a href="#调整视频分辨率" class="headerlink" title="调整视频分辨率"></a>调整视频分辨率</h3><p>添加 <code>--size &lt;WIDTHxHEIGHT&gt;</code><br>例如调整为 1280 x 720 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4 --size 1280x720</span><br></pre></td></tr></table></figure></p>
-<h3 id="调节比特率"><a href="#调节比特率" class="headerlink" title="调节比特率"></a>调节比特率</h3><p>添加 <code>--bit-rate &lt;RATE&gt;</code><br>例如调整比特率为 2 Mbps：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell screenrecord /sdcard/demo.mp4 --bit-rate 2000000</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改时长"><a href="#修改时长" class="headerlink" title="修改时长"></a>修改时长</h3><p>添加 <code>--time-limit &lt;TIME&gt;</code><br>例如调整为 60 秒：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb shell screenrecord /sdcard/demo.mp4 --time-limit 60</div></pre></td></tr></table></figure></p>
+<h3 id="调整视频分辨率"><a href="#调整视频分辨率" class="headerlink" title="调整视频分辨率"></a>调整视频分辨率</h3><p>添加 <code>--size &lt;WIDTHxHEIGHT&gt;</code><br>例如调整为 1280 x 720 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb shell screenrecord /sdcard/demo.mp4 --size 1280x720</div></pre></td></tr></table></figure></p>
+<h3 id="调节比特率"><a href="#调节比特率" class="headerlink" title="调节比特率"></a>调节比特率</h3><p>添加 <code>--bit-rate &lt;RATE&gt;</code><br>例如调整比特率为 2 Mbps：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ adb shell screenrecord /sdcard/demo.mp4 --bit-rate 2000000</div></pre></td></tr></table></figure></p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在命令行显示录制信息<br><code>--verbose</code><br>将视频方向旋转90°<br><code>--rotate</code><br>帮助<br><code>--help</code></p>
 <hr>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看已连接设备"><a href="#查看已连接设备" class="headerlink" title="查看已连接设备"></a>查看已连接设备</h3><p>查看已连接的设备，包括 USB 连接与 TCP/IP 5555 端口连接的设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices</span><br><span class="line">List of devices attached </span><br><span class="line">[serialNumber1] [state]</span><br><span class="line">[serialNumber2] [state]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看已连接设备"><a href="#查看已连接设备" class="headerlink" title="查看已连接设备"></a>查看已连接设备</h3><p>查看已连接的设备，包括 USB 连接与 TCP/IP 5555 端口连接的设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ adb devices</div><div class="line">List of devices attached </div><div class="line">[serialNumber1] [state]</div><div class="line">[serialNumber2] [state]</div><div class="line">...</div></pre></td></tr></table></figure></p>
 <ul>
 <li><code>Serial number</code><ul>
 <li>真实设备显示为控制台序号</li>
@@ -390,7 +390,7 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
 <li><code>state</code><ul>
 <li><code>offline</code> - 已连接但设备无响应。</li>
 <li><code>device</code> - 已连接至adb服务。adb服务在设备开机时即开始加载，故设备可能处于开机状态。</li>
-<li><code>no device</code> - 没有设备或模拟器连接。<br>添加 <code>-l</code> 可查看设备限定词<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices -l  </span><br><span class="line">[serialNumber] [state] product:[...] model:[...] device:[...]</span><br></pre></td></tr></table></figure>
+<li><code>no device</code> - 没有设备或模拟器连接。<br>添加 <code>-l</code> 可查看设备限定词<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ adb devices -l  </div><div class="line">[serialNumber] [state] product:[...] model:[...] device:[...]</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -398,15 +398,15 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
 <h3 id="远程shell"><a href="#远程shell" class="headerlink" title="远程shell"></a>远程shell</h3><p>运行手机内的 <code>/system/bin/...</code> 的命令  </p>
 <ul>
 <li><p>进入连接设备的shell命令行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell  </span><br><span class="line">shell@ $</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb shell  </div><div class="line">shell@ $</div></pre></td></tr></table></figure>
 <p>输入 <code>exit</code> 退出远程shell或者按 <code>CTRL+D</code> 。</p>
 </li>
-<li>单次使用远程shell命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell [command]</span><br></pre></td></tr></table></figure>
+<li>单次使用远程shell命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell [command]</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="选择设备"><a href="#选择设备" class="headerlink" title="选择设备"></a>选择设备</h3><p>当只连接单个设备或者模拟器时，adb shell会默认选择已连接的设备。当连接多个设备时，有些命令需要指定选择的设备。可通过 <code>-d|-e|-s &lt;specific device&gt;</code> 选择设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb [-d|-e|-s &lt;specific device&gt;] [command]  </span><br><span class="line">adb [-d|-e|-s &lt;specific device&gt;] shell  </span><br><span class="line">adb [-d|-e|-s &lt;specific device&gt;] shell [command]</span><br></pre></td></tr></table></figure></p>
+<h3 id="选择设备"><a href="#选择设备" class="headerlink" title="选择设备"></a>选择设备</h3><p>当只连接单个设备或者模拟器时，adb shell会默认选择已连接的设备。当连接多个设备时，有些命令需要指定选择的设备。可通过 <code>-d|-e|-s &lt;specific device&gt;</code> 选择设备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb [-d|-e|-s &lt;specific device&gt;] [command]  </div><div class="line">adb [-d|-e|-s &lt;specific device&gt;] shell  </div><div class="line">adb [-d|-e|-s &lt;specific device&gt;] shell [command]</div></pre></td></tr></table></figure></p>
 <p>  <code>-d</code> - 选择通过USB连接的设备，当有多个设备通过USB连接时返回错误。<br>  <code>-e</code> - 选择模拟器，当有多个模拟器时返回错误。<br>  <code>-s &lt;specific device&gt;</code> - 根据设备序列号或者限定词选择设备。</p>
-<h3 id="安装APK"><a href="#安装APK" class="headerlink" title="安装APK"></a>安装APK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install [-lrtsdg] &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="安装APK"><a href="#安装APK" class="headerlink" title="安装APK"></a>安装APK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb install [-lrtsdg] &lt;file&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -421,9 +421,9 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
       
         <div class="post-tags">
           
-            <a href="/tags/ADB/" rel="tag">#ADB</a>
-          
             <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/ADB/" rel="tag">#ADB</a>
           
         </div>
       
@@ -431,10 +431,6 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/03/11/Java核心技术笔记-基础知识-01/" rel="next" title="Java核心技术-基础知识 学习笔记01">
-                <i class="fa fa-chevron-left"></i> Java核心技术-基础知识 学习笔记01
-              </a>
             
           </div>
 
@@ -517,7 +513,7 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -534,7 +530,7 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -588,8 +584,8 @@ ADB 是一个客户端-服务端程序，包含以下三部分功能：
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

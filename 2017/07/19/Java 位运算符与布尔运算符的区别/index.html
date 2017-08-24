@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="Java “||”与”|” ，”&amp;amp;&amp;amp;”与”&amp;amp;”的区别在看 Google 的一个 Sample 中，看到了这么的一段代码：
-123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;">
+<meta name="description" content="在看 Google 的一个 Sample 中，看到了这么的一段代码：
+123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;        // do something    &amp;#125;    ...&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java "||"与"|" ，"&&"与"&"的区别">
 <meta property="og:url" content="http://www.insightsuen.com/2017/07/19/Java 位运算符与布尔运算符的区别/index.html">
 <meta property="og:site_name" content="孙健的博客">
-<meta property="og:description" content="Java “||”与”|” ，”&amp;amp;&amp;amp;”与”&amp;amp;”的区别在看 Google 的一个 Sample 中，看到了这么的一段代码：
-123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;">
-<meta property="og:updated_time" content="2017-08-24T08:04:59.000Z">
+<meta property="og:description" content="在看 Google 的一个 Sample 中，看到了这么的一段代码：
+123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;        // do something    &amp;#125;    ...&amp;#125;">
+<meta property="og:updated_time" content="2017-08-24T10:32:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java "||"与"|" ，"&&"与"&"的区别">
-<meta name="twitter:description" content="Java “||”与”|” ，”&amp;amp;&amp;amp;”与”&amp;amp;”的区别在看 Google 的一个 Sample 中，看到了这么的一段代码：
-123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;">
+<meta name="twitter:description" content="在看 Google 的一个 Sample 中，看到了这么的一段代码：
+123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;        // do something    &amp;#125;    ...&amp;#125;">
 
 
 
@@ -382,10 +382,11 @@
       
 
       
-        <h1 id="Java-“-”与”-”-，”-amp-amp-”与”-amp-”的区别"><a href="#Java-“-”与”-”-，”-amp-amp-”与”-amp-”的区别" class="headerlink" title="Java “||”与”|” ，”&amp;&amp;”与”&amp;”的区别"></a>Java “||”与”|” ，”&amp;&amp;”与”&amp;”的区别</h1><p>在看 Google 的一个 Sample 中，看到了这么的一段代码：</p>
+        <p>在看 Google 的一个 Sample 中，看到了这么的一段代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    boolen flagA = <span class="keyword">true</span>;</div><div class="line">    boolen flagB = <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">if</span> (flagA | flagB) &#123;</div><div class="line">        <span class="comment">// do something</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这个项目中仅在一处或判断采用了 <code>|</code>，其他部分都使用<code>||</code>。  </p>
 <p>两个运算值都是<code>boolean</code>类型，初步看来显然两者的结果、运行效果应该是相同的。我不太清楚这里是否是作者刻意为之，加之好奇还是进行了 Google。</p>
+<a id="more"></a>
 <p>结果还是很意思的，但其实也在预料之内：<br><code>||</code>、<code>&amp;&amp;</code>等逻辑运算，在运行时会发生<code>Short-circuit evaluation</code>。当<code>||</code>左值为<code>true</code>，或者<code>&amp;&amp;</code>左值为<code>false</code>时，便不会对右值进行运算。<br><code>|</code>、<code>&amp;</code>等布尔运算则采用<code>Eager evaluation</code>。即一定会对右值进行运算。</p>
 <p>那么如何在实际的开发中使用两者呢，引用 <a href="https://stackoverflow.com/a/7102013/5057419" target="_blank" rel="external">Stackoverflow回答</a> 的举例:    </p>
 <blockquote>
@@ -487,17 +488,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/6986412?v=3&s=460"
@@ -572,22 +564,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-“-”与”-”-，”-amp-amp-”与”-amp-”的区别"><span class="nav-number">1.</span> <span class="nav-text">Java “||”与”|” ，”&&”与”&”的区别</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

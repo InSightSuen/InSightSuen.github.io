@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Boolean Operator," />
 
 
 
@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="解决修改 Style Attributes 不起作用的问题今天新建一个项目时遇到了一个问题，项目中大部分 Activity theme 需要显示 ActionBar，个别页面根据业务不需要显示。需求很简单，直接定义 AppTheme 作为 Application 的基础样式，再定义一个子样式 AppTheme.NoTitle，修改为无 ActionBar 即可，
-问题代码AndroidManife">
+<meta name="description" content="Java “||”与”|” ，”&amp;amp;&amp;amp;”与”&amp;amp;”的区别在看 Google 的一个 Sample 中，看到了这么的一段代码：
+123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决修改 Style Attributes 不起作用的问题">
-<meta property="og:url" content="http://www.insightsuen.com/2017/02/08/自定义Style正确引用attributes的方法/index.html">
+<meta property="og:title" content="Java "||"与"|" ，"&&"与"&"的区别">
+<meta property="og:url" content="http://www.insightsuen.com/2017/07/19/Java 位运算符与布尔运算符的区别/index.html">
 <meta property="og:site_name" content="孙健的博客">
-<meta property="og:description" content="解决修改 Style Attributes 不起作用的问题今天新建一个项目时遇到了一个问题，项目中大部分 Activity theme 需要显示 ActionBar，个别页面根据业务不需要显示。需求很简单，直接定义 AppTheme 作为 Application 的基础样式，再定义一个子样式 AppTheme.NoTitle，修改为无 ActionBar 即可，
-问题代码AndroidManife">
-<meta property="og:updated_time" content="2017-08-24T08:01:52.000Z">
+<meta property="og:description" content="Java “||”与”|” ，”&amp;amp;&amp;amp;”与”&amp;amp;”的区别在看 Google 的一个 Sample 中，看到了这么的一段代码：
+123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;">
+<meta property="og:updated_time" content="2017-08-24T08:04:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决修改 Style Attributes 不起作用的问题">
-<meta name="twitter:description" content="解决修改 Style Attributes 不起作用的问题今天新建一个项目时遇到了一个问题，项目中大部分 Activity theme 需要显示 ActionBar，个别页面根据业务不需要显示。需求很简单，直接定义 AppTheme 作为 Application 的基础样式，再定义一个子样式 AppTheme.NoTitle，修改为无 ActionBar 即可，
-问题代码AndroidManife">
+<meta name="twitter:title" content="Java "||"与"|" ，"&&"与"&"的区别">
+<meta name="twitter:description" content="Java “||”与”|” ，”&amp;amp;&amp;amp;”与”&amp;amp;”的区别在看 Google 的一个 Sample 中，看到了这么的一段代码：
+123456789private void foo() &amp;#123;    ...    boolen flagA = true;    boolen flagB = false;    if (flagA | flagB) &amp;#123;">
 
 
 
@@ -87,7 +87,7 @@
   };
 </script>
 
-  <title> 解决修改 Style Attributes 不起作用的问题 | 孙健的博客 </title>
+  <title> Java "||"与"|" ，"&&"与"&"的区别 | 孙健的博客 </title>
   
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
@@ -240,7 +240,7 @@
             
             
               
-                解决修改 Style Attributes 不起作用的问题
+                Java "||"与"|" ，"&&"与"&"的区别
               
             
           </h1>
@@ -252,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-08T23:59:50+08:00" content="2017-02-08">
-              2017-02-08
+            <time itemprop="dateCreated" datetime="2017-07-19T12:02:21+08:00" content="2017-07-19">
+              2017-07-19
             </time>
           </span>
 
@@ -266,8 +266,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -282,8 +282,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/08/自定义Style正确引用attributes的方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/08/自定义Style正确引用attributes的方法/" itemprop="commentsCount"></span>
+                <a href="/2017/07/19/Java 位运算符与布尔运算符的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/19/Java 位运算符与布尔运算符的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,29 +314,17 @@
       
 
       
-        <h1 id="解决修改-Style-Attributes-不起作用的问题"><a href="#解决修改-Style-Attributes-不起作用的问题" class="headerlink" title="解决修改 Style Attributes 不起作用的问题"></a>解决修改 Style Attributes 不起作用的问题</h1><p>今天新建一个项目时遇到了一个问题，项目中大部分 Activity theme 需要显示 <code>ActionBar</code>，个别页面根据业务不需要显示。<br>需求很简单，直接定义 <code>AppTheme</code> 作为 <code>Application</code> 的基础样式，再定义一个子样式 <code>AppTheme.NoTitle</code>，修改为无 <code>ActionBar</code> 即可，</p>
-<h1 id="问题代码"><a href="#问题代码" class="headerlink" title="问题代码"></a>问题代码</h1><p>AndroidManifest.xml 部分代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">package</span>=<span class="string">"com.coustom.coustom"</span>&gt;</div><div class="line">    </div><div class="line">  <span class="tag">&lt;<span class="name">application</span></span></div><div class="line">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</div><div class="line">        </div><div class="line">        <span class="tag">&lt;<span class="name">activity</span></span></div><div class="line">            <span class="attr">android:name</span>=<span class="string">".CoustomActivity"</span></div><div class="line">            <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></div><div class="line">            <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme.NoTitle"</span> /&gt;</div><div class="line">        </div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>values/styles.xml 部分代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="xml"></span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/color_primary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/color_primary_dark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/color_accent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme.NoTitle"</span>&gt;</span><span class="xml"></span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>运行结果依旧显示 <code>ActionBar</code>，怀疑在 <code>BaseActivity</code> 中做了多余的事情，但排查下来并没有找，并且在以往的项目中也是可以成功Work的。</p>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>再排除了一些列可能的原因后，终于找到了问题原因： </p>
-<p>在修改 <code>Style Resource</code> 的属性的格式为：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"[package:]style_property_name"</span>&gt;</span>style_value<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div></pre></td></tr></table></figure>
+        <h1 id="Java-“-”与”-”-，”-amp-amp-”与”-amp-”的区别"><a href="#Java-“-”与”-”-，”-amp-amp-”与”-amp-”的区别" class="headerlink" title="Java “||”与”|” ，”&amp;&amp;”与”&amp;”的区别"></a>Java “||”与”|” ，”&amp;&amp;”与”&amp;”的区别</h1><p>在看 Google 的一个 Sample 中，看到了这么的一段代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    boolen flagA = <span class="keyword">true</span>;</div><div class="line">    boolen flagB = <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">if</span> (flagA | flagB) &#123;</div><div class="line">        <span class="comment">// do something</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个项目中仅在一处或判断采用了 <code>|</code>，其他部分都使用<code>||</code>。  </p>
+<p>两个运算值都是<code>boolean</code>类型，初步看来显然两者的结果、运行效果应该是相同的。我不太清楚这里是否是作者刻意为之，加之好奇还是进行了 Google。</p>
+<p>结果还是很意思的，但其实也在预料之内：<br><code>||</code>、<code>&amp;&amp;</code>等逻辑运算，在运行时会发生<code>Short-circuit evaluation</code>。当<code>||</code>左值为<code>true</code>，或者<code>&amp;&amp;</code>左值为<code>false</code>时，便不会对右值进行运算。<br><code>|</code>、<code>&amp;</code>等布尔运算则采用<code>Eager evaluation</code>。即一定会对右值进行运算。</p>
+<p>那么如何在实际的开发中使用两者呢，引用 <a href="https://stackoverflow.com/a/7102013/5057419" target="_blank" rel="external">Stackoverflow回答</a> 的举例:    </p>
 <blockquote>
-<p><code>[package:]</code> is the name of the package in which the resource is located (not required when referencing resources from your own package).<br><code>[package:]</code> 用于指定属性所在的包名，属性在当前包下时则无需添加。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Boolean b = <span class="keyword">true</span>;</div><div class="line"><span class="keyword">if</span>(b || foo.timeConsumingCall())</div><div class="line">&#123; </div><div class="line">   <span class="comment">//we entered without calling timeConsumingCall() </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(string != <span class="keyword">null</span> &amp;&amp; string.isEmpty())</div><div class="line">&#123;</div><div class="line">    <span class="comment">//we check for string being null before calling isEmpty()</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </blockquote>
-<p>若添加在属性名称前添加 <code>andoird:</code> 时即指定属性为 <code>android</code> 包下。</p>
-<p>而项目的 Base Style <code>AppTheme</code> 继承自 <code>Theme.AppCompat</code>,位于 <code>appcompat-v7 library</code>, 而不是 <code>android</code> 包下。<br>所以错误地使用 <code>android:windowActionBar</code> 和 <code>android:windowNoTitle</code>，应该使用 <code>windowActionBar</code> 和 <code>windowNoTitle</code>。将代码修改为：</p>
-<h1 id="修改后的代码"><a href="#修改后的代码" class="headerlink" title="修改后的代码"></a>修改后的代码</h1><p>values/styles.xml 修改后的部分代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="xml"></span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/color_primary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/color_primary_dark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/color_accent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme.NoTitle"</span>&gt;</span><span class="xml"></span></div><div class="line">        <span class="comment">&lt;!--&lt;item name="android:windowActionBar"&gt;false&lt;/item&gt;--&gt;</span></div><div class="line">        <span class="comment">&lt;!--&lt;item name="android:windowNoTitle"&gt;true&lt;/item&gt;--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在之前的项目中，Base Style 继承自 <code>@android:style/Theme.Holo.Light</code>，故使用修改前的代码是没有问题的。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>修改 Style attributes 时候</p>
-<ul>
-<li><code>Parent Style</code> 来自 <code>@android:xxx</code> 时，在属性名前添加 <code>android:</code><br>例如 <code>&lt;item name=&quot;android:windowActionBar&quot;&gt;false&lt;/item&gt;</code></li>
-<li><code>Parent Style</code> 不来自<code>@android:xxx</code> 时，无需在属性名前添加 <code>android:</code><br>例如 <code>&lt;item name=&quot;windowActionBar&quot;&gt;false&lt;/item&gt;</code></li>
-</ul>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://stackoverflow.com/a/36355924/5057419" target="_blank" rel="external">what’s the difference between windowActionBar and android:windowActionBar</a><br><a href="https://developer.android.com/guide/topics/resources/accessing-resources.html" target="_blank" rel="external">Accessing Resources | Android Developers</a><br><a href="https://developer.android.com/guide/topics/resources/style-resource.html" target="_blank" rel="external">Style Resource | Android Developers</a></p>
+<p>当然还有一个区别就是<code>|</code>、<code>&amp;</code>还可以位操作进行<code>Bitmask</code>。</p>
 
       
     </div>
@@ -351,7 +339,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/Boolean-Operator/" rel="tag">#Boolean Operator</a>
           
         </div>
       
@@ -360,16 +348,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/07/String Format使用指南/" rel="next" title="String Format使用指南">
-                <i class="fa fa-chevron-left"></i> String Format使用指南
+              <a href="/2017/02/08/自定义Style正确引用attributes的方法/" rel="next" title="解决修改 Style Attributes 不起作用的问题">
+                <i class="fa fa-chevron-left"></i> 解决修改 Style Attributes 不起作用的问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/19/Java 位运算符与布尔运算符的区别/" rel="prev" title="Java "||"与"|" ，"&&"与"&"的区别">
-                Java "||"与"|" ，"&&"与"&"的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/个人建站记录/" rel="prev" title="个人建站记录">
+                个人建站记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -495,7 +483,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解决修改-Style-Attributes-不起作用的问题"><span class="nav-number">1.</span> <span class="nav-text">解决修改 Style Attributes 不起作用的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题代码"><span class="nav-number">2.</span> <span class="nav-text">问题代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原因"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改后的代码"><span class="nav-number">4.</span> <span class="nav-text">修改后的代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-“-”与”-”-，”-amp-amp-”与”-amp-”的区别"><span class="nav-number">1.</span> <span class="nav-text">Java “||”与”|” ，”&&”与”&”的区别</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -767,9 +755,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'InSightSuen';
-      var disqus_identifier = '2017/02/08/自定义Style正确引用attributes的方法/';
-      var disqus_title = '解决修改 Style Attributes 不起作用的问题';
-      var disqus_url = 'http://www.insightsuen.com/2017/02/08/自定义Style正确引用attributes的方法/';
+      var disqus_identifier = '2017/07/19/Java 位运算符与布尔运算符的区别/';
+      var disqus_title = 'Java "||"与"|" ，"&&"与"&"的区别';
+      var disqus_url = 'http://www.insightsuen.com/2017/07/19/Java 位运算符与布尔运算符的区别/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
